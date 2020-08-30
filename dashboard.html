@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idea Generator</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="dashboard.js" defer></script>
+</head>
+<body>
+    <div class="section header-container">
+        <h1>Idea Generator</h1>
+        <p>Indecisive? As always. That's why this exists</p>
+    </div>
+    <div id="inputDiv" class="section inputDiv">
+        <input id="ideaText" class="input" type="text" placeholder="Add a new idea..." name="NewIdea"><button id="addBtn" class="input default-btn">ADD</button>
+    </div>
+    <div class="section generate-container">
+        <div id="generateBtn" class="generate-content generate-btn-container">
+            <button class="default-btn">GENERATE RANDOM IDEA</button>
+        </div>
+        <div class="generate-content ideaType-filter">
+            <div class="filter-btn"></div>
+            <div class="filter-content">
+                <div class="filter-option"><a href="#">Meal</a></div>
+                <div class="filter-option"><a href="#">Dessert</a></div>
+                <div class="filter-option"><a href="#">Snack</a></div>
+                <div class="filter-option"><a href="#">Activity</a></div>
+                <div class="filter-option"><a href="#">Attraction</a></div>
+                <div class="filter-option"><a href="#">None</a></div>
+            </div>
+        </div>
+    </div>
+    <div id="existsModal" class="modal idea-exists-modal">
+        <div class="modal-content idea-exists-content">
+            <span class="close-button">&times;</span>
+            <h1>Oops! Looks like that idea already exists.</h1>
+        </div>
+    </div>
+    <div id="suggestModal" class="modal suggestion-modal">
+        <div id="suggestionContent" class="modal-content suggestion-content">
+            <span class="close-button">&times;</span>
+            <h1>Did you mean any<br> of the following?</h1>
+            <button id="yesSuggestion" class="yesNo default-btn modal-btn">YES</button>
+            <button id="noSuggestion" class="yesNo default-btn modal-btn">NO</button>
+        </div>
+    </div>
+    <div id="addModal" class="modal add-modal">
+        <div id="addContent" class="modal-content add-content">
+            <span class="close-button">&times;</span>
+            <h1 id="newIdeaHeader">New Idea</h1>
+            <div class="add-form-container">
+                <div class="dropdown add-ideaType">
+                    <button class="dropdown-btn default-btn">IDEA TYPE</button>
+                    <div class="dropdown-content">
+                        <div class="dropdown-option"><a href="#">Meal</a></div>
+                        <div class="dropdown-option"><a href="#">Dessert</a></div>
+                        <div class="dropdown-option"><a href="#">Snack</a></div>
+                        <div class="dropdown-option"><a href="#">Activity</a></div>
+                        <div class="dropdown-option"><a href="#">Attraction</a></div>
+                    </div>
+                </div>
+                <div class="dropdown add-locationType">
+                    <button class="dropdown-btn default-btn">LOCATION TYPE</button>
+                    <div class="dropdown-content">
+                        <div class="dropdown-option"><a href="#">Indoor</a></div>
+                        <div class="dropdown-option"><a href="#">Outdoor</a></div>
+                    </div>
+                </div>
+                <div class="dropdown add-priceRating">
+                    <button class="dropdown-btn default-btn">PRICE RATING</button>
+                    <div class="dropdown-content">
+                        <div class="dropdown-option"><a href="#">Free</a></div>
+                        <div class="dropdown-option"><a href="#">Cheap</a></div>
+                        <div class="dropdown-option"><a href="#">Average</a></div>
+                        <div class="dropdown-option"><a href="#">Expensive</a></div>
+                    </div>
+                </div>
+                <div class="dropdown add-parking">
+                    <button class="dropdown-btn default-btn">PARKING</button>
+                    <div class="dropdown-content">
+                        <div class="dropdown-option"><a href="#">Free</a></div>
+                        <div class="dropdown-option"><a href="#">Free-Limited</a></div>
+                        <div class="dropdown-option"><a href="#">Paid</a></div>
+                        <div class="dropdown-option"><a href="#">Paid-Limited</a></div>
+                        <div class="dropdown-option"><a href="#">None</a></div>
+                    </div>
+                </div>
+                <div class="add-address-container">
+                    <input class="address-input" type="text" placeholder="Address...">
+                </div>
+            </div>
+            <button id="cancelIdea" class="cancel-add default-btn modal-btn">CANCEL</button>
+            <button id="addNewIdea" class="cancel-add default-btn modal-btn">ADD</button>
+        </div>
+    </div>
+    <div id="ideaAddedModal" class="modal idea-added-modal">
+        <div class="modal-content idea-added-content">
+            <span class="close-button">&times;</span>
+            <h1>Successfully Added!</h1>
+        </div>
+    </div>
+    <div id="randomModal" class="modal random-idea-modal">
+        <div class="modal-content random-idea-content">
+            <span class="close-button">&times;</span>
+            <div class="modal-headers">
+                <h1 id="ideaName">Idea Name</h1>
+                <h3 id="ideaType">Idea Type</h3>
+            </div>
+            <div class="modal-details">
+                <p id="address">Address</p>
+                <p id="locationType">Location Type</p>
+                <p id="priceRating">Price Rating</p>
+                <p id="parking">Parking Availability</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
